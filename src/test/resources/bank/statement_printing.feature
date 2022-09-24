@@ -1,5 +1,8 @@
 Feature: Statement printing
 
+  Background:
+    Given a client has an account
+
   Scenario: statement prints credits, debits and balances
     Given a client makes a deposit of 1000 on 10-01-2012
     And a deposit of 2000 on 13-01-2012
