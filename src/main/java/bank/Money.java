@@ -1,11 +1,21 @@
 package bank;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class Money {
 
+    private static final DecimalFormat FORMAT = initFormat();
     private final BigDecimal value;
+
+    private static DecimalFormat initFormat() {
+        DecimalFormat format = new DecimalFormat();
+        format.setMaximumFractionDigits(2);
+        format.setMinimumFractionDigits(2);
+        format.setGroupingUsed(false);
+        return format;
+    }
 
     public Money(BigDecimal value) {
         this.value = value;
@@ -45,5 +55,9 @@ public class Money {
 
     public Money substract(Money otherMoney) {
         return new Money(this.value.subtract(otherMoney.value));
+    }
+
+    public String format() {
+        return FORMAT.format(this.value);
     }
 }

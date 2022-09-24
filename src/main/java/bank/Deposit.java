@@ -1,5 +1,6 @@
 package bank;
 
+import java.io.PrintStream;
 import java.util.Date;
 import java.util.Objects;
 
@@ -35,5 +36,10 @@ public class Deposit implements Transaction {
                 "money=" + money +
                 ", date=" + date +
                 '}';
+    }
+
+    @Override
+    public void printTo(PrintStream printer, Money balance) {
+
     }
 }

@@ -43,4 +43,13 @@ class MoneyTest {
                 moneyOf(TWENTY_THOUSAND).substract(moneyOf(TEN_THOUSAND))
         );
     }
+
+    @Test
+    void should_format_itself() {
+        Money money = moneyOf(TEN_THOUSAND);
+        assertEquals(
+                "10000.00",
+                money.format()
+        );
+    }
 }
