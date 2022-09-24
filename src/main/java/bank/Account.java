@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import static bank.Deposit.depositOf;
+
 public class Account {
 
     private Money balance;
@@ -18,7 +20,7 @@ public class Account {
 
     public void deposit(Money amount, Date date) {
         balance = balance.add(amount);
-        statement.addLine(amount, date, balance);
+        statement.addLine(depositOf(amount, date), balance);
     }
 
     public void withdraw(Money amount, Date date) {

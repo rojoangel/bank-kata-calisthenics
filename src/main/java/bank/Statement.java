@@ -14,4 +14,8 @@ public class Statement {
     public void addLine(Money amount, Date date, Money balance) {
 
     }
+
+    public void addLine(Transaction transaction, Money balance) {
+
+    }
 }

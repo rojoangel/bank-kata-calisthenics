@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
 
+import static bank.Deposit.depositOf;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
@@ -27,7 +28,7 @@ class AccountTest {
         Date date = new Date(1, Calendar.OCTOBER, 2022);
 
         account.deposit(amount, date);
-        verify(statement).addLine(amount, date, amount);
+        verify(statement).addLine(depositOf(amount, date), amount);
     }
 
     @Test
