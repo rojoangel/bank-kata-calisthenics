@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import static bank.Deposit.depositOf;
+import static bank.Withdrawal.withdrawalOf;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
@@ -37,6 +38,6 @@ class AccountTest {
         Date date = new Date(1, Calendar.OCTOBER, 2022);
 
         account.withdraw(amount, date);
-        verify(statement).addLine(amount.negate(), date, amount.negate());
+        verify(statement).addLine(withdrawalOf(amount, date), amount.negate());
     }
 }

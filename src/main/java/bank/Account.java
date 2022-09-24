@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import static bank.Deposit.depositOf;
+import static bank.Withdrawal.withdrawalOf;
 
 public class Account {
 
@@ -25,7 +26,7 @@ public class Account {
 
     public void withdraw(Money amount, Date date) {
         balance = balance.substract(amount);
-        statement.addLine(amount.negate(), date, balance);
+        statement.addLine(withdrawalOf(amount, date), balance);
     }
 
     public void printStatement(PrintStream printer) {
