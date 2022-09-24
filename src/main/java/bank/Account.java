@@ -5,6 +5,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Account {
+    private final Statement statement;
+
+    public Account() {
+        statement = new Statement();
+    }
+
     public void deposit(BigDecimal amount, Date date) {
     }
 
@@ -13,6 +19,6 @@ public class Account {
     }
 
     public void printStatement(PrintStream printer) {
-
+        statement.printTo(printer);
     }
 }
