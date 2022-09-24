@@ -1,7 +1,6 @@
 package bank;
 
 import java.io.PrintStream;
-import java.math.BigDecimal;
 import java.util.Date;
 
 public class Account {
@@ -16,7 +15,7 @@ public class Account {
         statement.addLine(money, date, money);
     }
 
-    public void withdraw(BigDecimal amount, Date date) {
+    public void withdraw(Money amount, Date date) {
 
     }
 

@@ -29,8 +29,8 @@ public class StepDefinitions {
         account.deposit(amount, new Date());
     }
 
-    @Given("a withdrawal of {bigdecimal} on {int}-{int}-{int}")
-    public void a_withdrawal_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
+    @Given("a withdrawal of {money} on {int}-{int}-{int}")
+    public void a_withdrawal_of_on(Money amount, Integer day, Integer month, Integer year) {
         account.withdraw(amount, new Date());
     }
 
