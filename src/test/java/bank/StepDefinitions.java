@@ -4,49 +4,43 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.io.PrintStream;
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class StepDefinitions {
+
+    private Account account;
+
+    private PrintStream printer;
+
     @Given("a client has an account")
     public void a_client_has_an_account() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        account = new Account();
     }
-    
+
     @Given("a client makes a deposit of {bigdecimal} on {int}-{int}-{int}")
     public void a_client_makes_a_deposit_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        account.deposit(amount, new Date());
     }
 
     @Given("a deposit of {bigdecimal} on {int}-{int}-{int}")
     public void a_deposit_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        account.deposit(amount, new Date());
     }
 
     @Given("a withdrawal of {bigdecimal} on {int}-{int}-{int}")
     public void a_withdrawal_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        account.withdraw(amount, new Date());
     }
 
     @When("she prints her bank statement")
     public void she_prints_her_bank_statement() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        account.printStatement(printer);
     }
 
     @Then("she would see")
     public void she_would_see(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
     }
 
 }
