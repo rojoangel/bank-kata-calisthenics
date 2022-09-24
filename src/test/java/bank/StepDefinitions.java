@@ -8,19 +8,19 @@ import java.math.BigDecimal;
 
 public class StepDefinitions {
     @Given("a client makes a deposit of {bigdecimal} on {int}-{int}-{int}")
-    public void a_client_makes_a_deposit_of_on(BigDecimal amount, Integer int2, Integer int3, Integer int4) {
+    public void a_client_makes_a_deposit_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
     @Given("a deposit of {bigdecimal} on {int}-{int}-{int}")
-    public void a_deposit_of_on(BigDecimal amount, Integer int2, Integer int3, Integer int4) {
+    public void a_deposit_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
     @Given("a withdrawal of {bigdecimal} on {int}-{int}-{int}")
-    public void a_withdrawal_of_on(BigDecimal amount, Integer int2, Integer int3, Integer int4) {
+    public void a_withdrawal_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
