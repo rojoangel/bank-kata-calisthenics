@@ -24,13 +24,8 @@ public class StepDefinitions {
         account = new Account();
     }
 
-    @Given("a client makes a deposit of {bigdecimal} on {int}-{int}-{int}")
+    @Given("(a client makes )a deposit of {bigdecimal} on {int}-{int}-{int}")
     public void a_client_makes_a_deposit_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
-        account.deposit(amount, new Date());
-    }
-
-    @Given("a deposit of {bigdecimal} on {int}-{int}-{int}")
-    public void a_deposit_of_on(BigDecimal amount, Integer day, Integer month, Integer year) {
         account.deposit(amount, new Date());
     }
 
