@@ -11,7 +11,7 @@ public class Statement {
         printer.println(HEADER);
     }
 
-    public void addLine(BigDecimal amount, Date date, BigDecimal balance) {
+    public void addLine(Money amount, Date date, Money balance) {
 
     }
 }

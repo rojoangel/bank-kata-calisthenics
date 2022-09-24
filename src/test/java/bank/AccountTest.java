@@ -23,7 +23,7 @@ class AccountTest {
 
     @Test
     void should_add_deposit_line_to_statement() {
-        account.deposit(BigDecimal.valueOf(1_000), new Date(1, Calendar.OCTOBER, 2022));
-        verify(statement).addLine(BigDecimal.valueOf(1_000), new Date(1, Calendar.OCTOBER, 2022), BigDecimal.valueOf(1_000));
+        account.deposit(Money.moneyOf(BigDecimal.valueOf(10_000)), new Date(1, Calendar.OCTOBER, 2022));
+        verify(statement).addLine(Money.moneyOf(BigDecimal.valueOf(10_000)), new Date(1, Calendar.OCTOBER, 2022), Money.moneyOf(BigDecimal.valueOf(10_000)));
     }
 }

@@ -11,8 +11,9 @@ public class Account {
         this.statement = statement;
     }
 
-    public void deposit(BigDecimal amount, Date date) {
-        statement.addLine(amount, date, amount);
+
+    public void deposit(Money money, Date date) {
+        statement.addLine(money, date, money);
     }
 
     public void withdraw(BigDecimal amount, Date date) {
