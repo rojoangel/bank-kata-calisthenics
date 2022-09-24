@@ -22,7 +22,8 @@ public class Account {
     }
 
     public void withdraw(Money amount, Date date) {
-        statement.addLine(amount.negate(), date, amount.negate());
+        balance = balance.substract(amount);
+        statement.addLine(amount.negate(), date, balance);
     }
 
     public void printStatement(PrintStream printer) {

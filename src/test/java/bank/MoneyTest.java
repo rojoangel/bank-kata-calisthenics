@@ -35,4 +35,12 @@ class MoneyTest {
                 moneyOf(TEN_THOUSAND).add(moneyOf(TEN_THOUSAND))
         );
     }
+
+    @Test
+    void should_substract_values() {
+        assertEquals(
+                new Money(TEN_THOUSAND),
+                moneyOf(TWENTY_THOUSAND).substract(moneyOf(TEN_THOUSAND))
+        );
+    }
 }
