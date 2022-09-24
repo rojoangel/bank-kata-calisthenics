@@ -21,7 +21,7 @@ public class StepDefinitions {
 
     @Given("a client has an account")
     public void a_client_has_an_account() {
-        account = new Account();
+        account = new Account(new Statement());
     }
 
     @Given("(a client makes )a deposit of {bigdecimal} on {int}-{int}-{int}")
