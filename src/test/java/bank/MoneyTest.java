@@ -11,6 +11,7 @@ class MoneyTest {
 
     public static final BigDecimal TEN_THOUSAND = BigDecimal.valueOf(10_000);
     public static final BigDecimal NEGATIVE_TEN_THOUSAND = BigDecimal.valueOf(10_000).negate();
+    private static final BigDecimal TWENTY_THOUSAND = BigDecimal.valueOf(20_000);
 
     @Test
     void should_statically_initialize_a_money() {
@@ -24,6 +25,14 @@ class MoneyTest {
         assertEquals(
                 new Money(NEGATIVE_TEN_THOUSAND),
                 moneyOf(TEN_THOUSAND).negate()
+        );
+    }
+
+    @Test
+    void should_sum_values_up() {
+        assertEquals(
+                new Money(TWENTY_THOUSAND),
+                moneyOf(TEN_THOUSAND).add(moneyOf(TEN_THOUSAND))
         );
     }
 }

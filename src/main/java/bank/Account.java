@@ -1,18 +1,24 @@
 package bank;
 
 import java.io.PrintStream;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class Account {
+
+    private Money balance;
+
     private final Statement statement;
 
     public Account(Statement statement) {
+        this.balance = Money.moneyOf(BigDecimal.ZERO);
         this.statement = statement;
     }
 
 
     public void deposit(Money amount, Date date) {
-        statement.addLine(amount, date, amount);
+        balance = balance.add(amount);
+        statement.addLine(amount, date, balance);
     }
 
     public void withdraw(Money amount, Date date) {

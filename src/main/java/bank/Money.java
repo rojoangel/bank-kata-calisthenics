@@ -38,4 +38,8 @@ public class Money {
                 "value=" + value +
                 '}';
     }
+
+    public Money add(Money otherMoney) {
+        return new Money(this.value.add(otherMoney.value));
+    }
 }
