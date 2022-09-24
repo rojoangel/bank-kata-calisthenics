@@ -11,12 +11,12 @@ public class Account {
     }
 
 
-    public void deposit(Money money, Date date) {
-        statement.addLine(money, date, money);
+    public void deposit(Money amount, Date date) {
+        statement.addLine(amount, date, amount);
     }
 
     public void withdraw(Money amount, Date date) {
-
+        statement.addLine(amount.negate(), date, amount.negate());
     }
 
     public void printStatement(PrintStream printer) {

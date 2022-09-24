@@ -25,8 +25,17 @@ class AccountTest {
     void should_add_deposit_line_to_statement() {
         Money amount = Money.moneyOf(BigDecimal.valueOf(10_000));
         Date date = new Date(1, Calendar.OCTOBER, 2022);
-        
+
         account.deposit(amount, date);
         verify(statement).addLine(amount, date, amount);
+    }
+
+    @Test
+    void should_add_withdrawal_line_to_statement() {
+        Money amount = Money.moneyOf(BigDecimal.valueOf(10_000));
+        Date date = new Date(1, Calendar.OCTOBER, 2022);
+
+        account.withdraw(amount, date);
+        verify(statement).addLine(amount.negate(), date, amount.negate());
     }
 }

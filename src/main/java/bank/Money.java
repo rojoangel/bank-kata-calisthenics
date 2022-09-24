@@ -15,6 +15,10 @@ public class Money {
         return new Money(value);
     }
 
+    public Money negate() {
+        return new Money(value.negate());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -26,5 +30,12 @@ public class Money {
     @Override
     public int hashCode() {
         return Objects.hash(value);
+    }
+
+    @Override
+    public String toString() {
+        return "Money{" +
+                "value=" + value +
+                '}';
     }
 }
