@@ -38,7 +38,7 @@ class WithdrawalTest {
         Transaction withdrawal = withdrawalOf(
                 moneyOf(BigDecimal.valueOf(500)),
                 LocalDate.of(2012, 1, 14));
-        Money balance = moneyOf(BigDecimal.valueOf(25_000));
+        Money balance = moneyOf(BigDecimal.valueOf(2_500));
 
         withdrawal.printTo(printer, balance);
         verify(printer).println("| 14/01/2012 |         | 500.00 | 2500.00 |");

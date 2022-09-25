@@ -2,9 +2,11 @@ package bank;
 
 import java.io.PrintStream;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Withdrawal implements Transaction {
+    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private final Money money;
     private final LocalDate date;
 
@@ -41,7 +43,7 @@ public class Withdrawal implements Transaction {
     @Override
     public void printTo(PrintStream printer, Money balance) {
         String buidler = "| " +
-                this.date +
+                FORMATTER.format(this.date) +
                 " | " +
                 "       " +
                 " | " +
