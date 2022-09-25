@@ -1,5 +1,8 @@
-package bank;
+package bank.feature;
 
+import bank.Account;
+import bank.Money;
+import bank.Statement;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

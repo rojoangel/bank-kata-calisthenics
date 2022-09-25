@@ -1,5 +1,6 @@
-package bank;
+package bank.feature;
 
+import bank.Money;
 import io.cucumber.java.ParameterType;
 
 import java.math.BigDecimal;
