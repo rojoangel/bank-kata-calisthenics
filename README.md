@@ -1,6 +1,8 @@
 Bank account kata
 =================
 
+Original idea: https://github.com/sandromancuso/Bank-kata/
+
 The Rules
 ---------
 
