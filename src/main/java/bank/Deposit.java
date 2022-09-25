@@ -40,15 +40,23 @@ public class Deposit implements Transaction {
 
     @Override
     public void printTo(PrintStream printer, Money balance) {
-        String output = "| " +
-                DATE_TIME_FORMATTER.format(this.date) +
-                " | " +
-                this.money.format() +
-                " | " +
-                "       " +
-                " | " +
-                balance.format() +
-                " |";
+        String output = String.format("| %s | %s | %s | %s |", formatDate(), formatCredit(), formatDebit(), formatBalance(balance));
         printer.println(output);
+    }
+
+    private String formatBalance(Money balance) {
+        return balance.format();
+    }
+
+    private String formatDebit() {
+        return "       ";
+    }
+
+    private String formatCredit() {
+        return this.money.format();
+    }
+
+    private String formatDate() {
+        return DATE_TIME_FORMATTER.format(this.date);
     }
 }
