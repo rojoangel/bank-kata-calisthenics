@@ -41,7 +41,7 @@ public class Deposit implements Transaction {
     @Override
     public void printTo(PrintStream printer, Money balance) {
         String output = "| " +
-                FORMATTER.format(this.date) +
+                DATE_TIME_FORMATTER.format(this.date) +
                 " | " +
                 this.money.format() +
                 " | " +
