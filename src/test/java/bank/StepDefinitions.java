@@ -7,8 +7,8 @@ import io.cucumber.java.en.When;
 import org.mockito.InOrder;
 
 import java.io.PrintStream;
+import java.time.LocalDate;
 
-import static java.time.LocalDate.now;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 
@@ -25,12 +25,12 @@ public class StepDefinitions {
 
     @Given("(a client makes )a deposit of {money} on {int}-{int}-{int}")
     public void a_client_makes_a_deposit_of_on(Money amount, Integer day, Integer month, Integer year) {
-        account.deposit(amount, now());
+        account.deposit(amount, LocalDate.of(year, month, day));
     }
 
     @Given("a withdrawal of {money} on {int}-{int}-{int}")
     public void a_withdrawal_of_on(Money amount, Integer day, Integer month, Integer year) {
-        account.withdraw(amount, now());
+        account.withdraw(amount, LocalDate.of(year, month, day));
     }
 
     @When("she prints her bank statement")
