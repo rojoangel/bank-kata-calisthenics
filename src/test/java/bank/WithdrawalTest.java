@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import java.io.PrintStream;
 import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
 
 import static bank.Money.moneyOf;
 import static bank.Withdrawal.withdrawalOf;
 import static java.math.BigDecimal.TEN;
+import static java.time.LocalDate.now;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -26,7 +26,7 @@ class WithdrawalTest {
 
     @Test
     void should_statically_build_a_withdrawal() {
-        Date now = new Date();
+        LocalDate now = now();
         assertEquals(
                 new Withdrawal(moneyOf(TEN), now),
                 withdrawalOf(moneyOf(TEN), now)
@@ -37,7 +37,7 @@ class WithdrawalTest {
     void should_print_itself() {
         Transaction withdrawal = withdrawalOf(
                 moneyOf(BigDecimal.valueOf(500)),
-                new Date(14, Calendar.JANUARY, 2012));
+                LocalDate.of(2012, 1, 14));
         Money balance = moneyOf(BigDecimal.valueOf(25_000));
 
         withdrawal.printTo(printer, balance);

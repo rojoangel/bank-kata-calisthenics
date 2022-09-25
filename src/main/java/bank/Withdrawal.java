@@ -1,19 +1,19 @@
 package bank;
 
 import java.io.PrintStream;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Withdrawal implements Transaction {
     private final Money money;
-    private final Date date;
+    private final LocalDate date;
 
-    public Withdrawal(Money money, Date date) {
+    public Withdrawal(Money money, LocalDate date) {
         this.money = money;
         this.date = date;
     }
 
-    public static Transaction withdrawalOf(Money money, Date date) {
+    public static Transaction withdrawalOf(Money money, LocalDate date) {
         return new Withdrawal(money, date);
     }
 

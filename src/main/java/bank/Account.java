@@ -2,7 +2,7 @@ package bank;
 
 import java.io.PrintStream;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 import static bank.Deposit.depositOf;
 import static bank.Withdrawal.withdrawalOf;
@@ -19,12 +19,12 @@ public class Account {
     }
 
 
-    public void deposit(Money amount, Date date) {
+    public void deposit(Money amount, LocalDate date) {
         balance = balance.add(amount);
         statement.addLine(depositOf(amount, date), balance);
     }
 
-    public void withdraw(Money amount, Date date) {
+    public void withdraw(Money amount, LocalDate date) {
         balance = balance.substract(amount);
         statement.addLine(withdrawalOf(amount, date), balance);
     }

@@ -1,19 +1,19 @@
 package bank;
 
 import java.io.PrintStream;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Deposit implements Transaction {
     private final Money money;
-    private final Date date;
+    private final LocalDate date;
 
-    public Deposit(Money money, Date date) {
+    public Deposit(Money money, LocalDate date) {
         this.money = money;
         this.date = date;
     }
 
-    public static Transaction depositOf(Money money, Date date) {
+    public static Transaction depositOf(Money money, LocalDate date) {
         return new Deposit(money, date);
     }
 
