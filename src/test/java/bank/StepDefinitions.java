@@ -39,11 +39,11 @@ public class StepDefinitions {
     }
 
     @Then("she would see")
-    public void she_would_see(DataTable dataTable) {
+    public void she_would_see(String docString) {
         InOrder inOrder = inOrder(printer);
-        inOrder.verify(printer).println("| date       | credit  | debit  | balance |");
-        inOrder.verify(printer).println("| 14/01/2012 |         | 500.00 | 2500.00 |");
-        inOrder.verify(printer).println("| 13/01/2012 | 2000.00 |        | 3000.00 |");
-        inOrder.verify(printer).println("| 10/01/2012 | 1000.00 |        | 1000.00 |");
+        String[] lines = docString.split(System.lineSeparator());
+        for (String line : lines) {
+            inOrder.verify(printer).println(line);
+        }
     }
 }
