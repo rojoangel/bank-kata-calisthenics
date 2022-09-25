@@ -45,7 +45,7 @@ public class Deposit implements Transaction {
                 " | " +
                 this.money.format() +
                 " | " +
-                "      " +
+                "       " +
                 " | " +
                 balance.format() +
                 " |";

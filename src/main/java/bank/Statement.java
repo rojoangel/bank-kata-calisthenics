@@ -7,7 +7,7 @@ import java.util.List;
 public class Statement {
 
     private final List<StatementLine> lines;
-    private static final String HEADER = "| date       | credit  | debit  | balance |";
+    private static final String HEADER = "| date       | credit  | debit   | balance |";
 
     public Statement() {
         lines = new ArrayList<>();

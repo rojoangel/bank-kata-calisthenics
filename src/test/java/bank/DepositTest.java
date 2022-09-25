@@ -41,6 +41,6 @@ class DepositTest {
         Money balance = moneyOf(BigDecimal.valueOf(3_000));
 
         deposit.printTo(printer, balance);
-        verify(printer).println("| 13/01/2012 | 2000.00 |        | 3000.00 |");
+        verify(printer).println("| 13/01/2012 | 2000.00 |         | 3000.00 |");
     }
 }
