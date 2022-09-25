@@ -14,7 +14,7 @@ public class Statement {
     }
 
     public void addLine(Transaction transaction, Money balance) {
-        lines.add(new StatementLine(transaction, balance));
+        lines.add(0, new StatementLine(transaction, balance));
     }
 
     public void printTo(PrintStream printer) {
