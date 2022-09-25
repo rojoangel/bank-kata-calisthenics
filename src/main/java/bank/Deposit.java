@@ -40,7 +40,7 @@ public class Deposit implements Transaction {
 
     @Override
     public void printTo(PrintStream printer, Money balance) {
-        String buidler = "| " +
+        String output = "| " +
                 FORMATTER.format(this.date) +
                 " | " +
                 this.money.format() +
@@ -49,6 +49,6 @@ public class Deposit implements Transaction {
                 " | " +
                 balance.format() +
                 " |";
-        printer.println(buidler);
+        printer.println(output);
     }
 }
